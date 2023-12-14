@@ -1,0 +1,56 @@
+@page
+@model IndexModel
+@{
+    ViewData["Title"] = "JoinTables Table";
+}
+
+<style>
+    table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    td, th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+    }
+</style>
+
+<div class="text-center">
+    <h1 class="display-4">Final Database Project</h1>
+</div>
+<br><br>
+
+
+<h2  class="text-center">Join Table</h2>
+
+<div class="text-center">
+    <table>
+        <tr>
+            <th>ProductKey</th>
+            <th>OrderDateKey</th>
+            <th>DueDateKey</th>
+            <th>SalesTerritoryKey</th>
+            <th>SalesTerritoryKey</th>
+            <th>SalesTerritoryAlternateKey</th>
+            <th>SalesTerritoryRegion</th>
+            <th>SalesTerritoryCountry</th>
+            <th>SalesTerritoryGroup</th>
+        </tr>
+        @foreach (var item in Model.dbContext.ReturnJoinTable()) {
+            <tr>
+                <td>@item.ProductKey</td>
+                <td>@item.OrderDateKey</td>
+                <td>@item.DueDateKey</td>
+                <th>@item.SalesTerritoryKey</th>
+                <td>@item.SalesTerritoryKey</td>
+                <td>@item.SalesTerritoryAlternateKey</td>
+                <td>@item.SalesTerritoryRegion</td>
+                <td>@item.SalesTerritoryCountry</td>
+                <td>@item.SalesTerritoryGroup</td>
+            </tr>
+        }
+    </table>
+</div>

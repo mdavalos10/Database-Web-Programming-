@@ -1,0 +1,25 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<style>
+        /* Add space between links using margin */
+        .link-container a {
+            margin-right: 10%; /* Adjust the value as needed */
+        }
+</style>
+
+<div class="text-center">
+    <h1 class="display-4">Final Database Project</h1>
+</div>
+<br><br><br>
+
+<div class="text-center">
+    <div class="link-container">
+        <a href="~/FactResellerSales">Check the FactResellerSales Table</a>
+        <a href="~/DimSalesTerritory">Check the DimSalesTerritory Table</a>
+        <a href="~/JoinTables">Check the Join Table</a>
+    </div>
+</div>

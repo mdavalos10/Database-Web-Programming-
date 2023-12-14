@@ -1,0 +1,46 @@
+@page
+@model IndexModel
+
+@{
+    ViewData["Title"] = "DimProductCategory Table";
+}
+
+<style>
+    table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    td, th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+    }
+</style>
+
+<div class="text-center">
+    <h1 class="display-4">Final Database Project</h1>
+</div>
+<br><br>
+
+<h2  class="text-center">FactResellerSales Table</h2>
+
+<div class="text-center" >
+    <table >
+        <tr class="table_header_space">
+            <th>ProductKey</th>
+            <th>OrderDateKey</th>
+            <th>DueDateKey</th>
+            <th>SalesTerritoryKey</th>
+        </tr>
+        @foreach (var item in Model.dbContext.ReturnFactResellerSales()) {
+            <tr>
+                <td>@item.ProductKey</td>
+                <td>@item.OrderDateKey</td>
+                <td>@item.DueDateKey</td>
+                <td>@item.SalesTerritoryKey</td>
+            </tr>
+        }
+    </table>
+</div>
